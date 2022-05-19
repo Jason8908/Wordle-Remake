@@ -1,1 +1,1 @@
-# Wordle-Remake
+# Wordle Remake
