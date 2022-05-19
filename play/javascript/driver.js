@@ -8,5 +8,11 @@ function init() {
     // Initializing the board.
     board.init();
     console.log(board.board_arr);
+    // Keyboard listener.
+    document.addEventListener('keypress', (event) => {
+        // Detecting if the inputted key is a valid input.
+        let ascii = event.key.charCodeAt(0);
+        if (event.key)
+    })
 }
 window.onload = init;

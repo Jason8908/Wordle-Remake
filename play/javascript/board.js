@@ -6,6 +6,9 @@ class Board {
         this.box_size = box_size; // The size of each letter box.
     }
     init() {
+        // Variables to keep track of the state of the board.
+        this.curr_y = 0;
+        this.curr_x = 0;
         // Creating the board, which is a table.
         const board = document.createElement('table');
         // Creating an array to store table values.
@@ -13,13 +16,13 @@ class Board {
         // Giving it a class so we can identify it later.
         board.classList.add("board");
         // Adding the cells to the board.
-        for (let i = 1; i <= this.height; i++) {
+        for (let i = 0; i <= this.height; i++) {
             // Creating a row for the board.
             const row = document.createElement('tr');
             row.classList.add('row');
             // Array representation.
             let row_arr = new Array();
-            for (let j = 1; j <= this.width; j++) {
+            for (let j = 0; j <= this.width; j++) {
                 // Adding the individual cells to the table element.
                 const cell = document.createElement('td');
                 cell.classList.add('cell');
