@@ -4,7 +4,7 @@ body {
 #header {
     margin-top: 0;
     border-bottom-style: solid;
-    border-width: 2px;
+    border-width: 1px;
 }
 #title {
     font-size: 1.65em;
@@ -19,4 +19,16 @@ body {
     border-style: solid;
     border-width: 1px;
     color: grey;
+    padding: 0px;
+    overflow: hidden;
+    position: relative;
+}
+.letter {
+    text-align: center;
+    font-weight: bold;
+    vertical-align: middle;
+    font-size: 2em;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
 }
