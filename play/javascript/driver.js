@@ -1,7 +1,8 @@
-window.onload = init;
 // Settings:
-const num_of_guesses = 6;
-const word_len = 5;
+let solution = "";
+let word_len = 0;
+let num_of_guesses = 0;
+
 // Keypress functions.
 function validKey(event) {
     // Detecting if the inputted key is a valid input.
@@ -13,9 +14,11 @@ function validKey(event) {
     return true;
 }
 // Initialization Function.
-function init() {
+function init(solution) {
+    const word_len = solution.length;
+    const num_of_guesses = word_len+1;
     // Instantiating a new board object.
-    const board = new Board(word_len, num_of_guesses, "PENIS");
+    const board = new Board(word_len, num_of_guesses, solution);
     // Initializing the board.
     board.init();
     // Keyboard listener.
@@ -27,3 +30,15 @@ function init() {
         else board.letterIn(event.key); // General letter.
     });
 }
+
+$(document).ready(async () => {
+  //Async function to check for user information.
+  $.ajax({
+    url: './words/getWord.php',
+    type: 'GET',
+    success: async function(res) {
+      // Initializing the game.
+      init(res);
+    }  
+  });
+});
