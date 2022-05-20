@@ -6,9 +6,9 @@ class Board {
         this.box_size = box_size; // The size of each letter box.
         this.word = word; // The correct word.
         // Colours.
-        this.green = "#538D4E";
-        this.grey = "#3A3A3C";
-        this.yellow = "#B59F3B";
+        this.green = "#6AAA64";
+        this.grey = "#787C7E";
+        this.yellow = "#C9B458";
     }
     init() {
         // Variables to keep track of the state of the board.
