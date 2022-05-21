@@ -137,7 +137,9 @@ class Board {
             let letter = this.board_arr[this.curr_y][i];
             let key = document.getElementById(`${letter}`);
             // If the key is not marked already.
-            if (!key.classList.contains("marked")) {
+            if (!key.classList.contains("marked") || colours[i] == this.green) {
+                key.className = "";
+                key.classList.add("key");
                 key.classList.add("marked");
                 if (colours[i] == this.green) key.classList.add("greenP");
                 else if (colours[i] == this.yellow) key.classList.add("yellowP");
