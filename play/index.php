@@ -12,6 +12,8 @@
         <div id="header">
             <p id="title">Wordle</p>
         </div>
+        <div class="reveal hide"></div>
+        <div class="messages"></div>
         <br>
         <div id="game"></div>
     </body>

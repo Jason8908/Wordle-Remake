@@ -52,6 +52,11 @@ class Board {
     }
     endGame(guessed) {
         this.active = false;
+        // Reveal the correect word
+        let answer = document.getElementsByClassName("reveal")[0];
+        answer.innerHTML = this.word;
+        answer.classList.add("show");
+        answer.classList.remove("hide");
         // If the player was able to guess the correct word.
         if (guessed) {
             return true;
@@ -109,7 +114,7 @@ class Board {
                 // Checking the letters.
                 if (this.board_arr[this.curr_y][i] == solution[j]) {
                     // Correct letter, incorrect position.
-                    colours[i] = this.yellow;
+                    if (!colours[i]) colours[i] = this.yellow;
                     solution[j] = '';
                     break;
                 }

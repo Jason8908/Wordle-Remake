@@ -32,3 +32,25 @@ body {
     margin: 0px;
     position: relative;
 }
+.show {
+    height: 23px;
+    opacity: 100%;
+}
+.hide {
+    height: 0px;
+    opacity: 0%;
+}
+.reveal {
+    position: fixed;
+    margin-top: 0.5%;
+    background-color: black;
+    color: white;
+    border-radius: 7px;
+    letter-spacing: 3px;
+    padding: 0.5%;
+    margin-left: 47.2%;
+    z-index: 100;
+    transition-timing-function: ease-in;
+    transition-property: all;
+    transition-duration: 0.25s;
+}
