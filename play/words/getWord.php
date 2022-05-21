@@ -23,6 +23,7 @@
     $length = count($words);
     $index = rand(0, $length-1);
     $word = $words[$index];
+    $word = str_replace("\r", "", $word);
     // Writing this new word to a file.
     $new_file = fopen("./history/".date("Y-m-d").".txt", "w");
     fwrite($new_file, $word);
