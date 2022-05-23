@@ -18,7 +18,6 @@ function init(solution) {
     const word_len = solution.length;
     const num_of_guesses = word_len+1;
     // Instantiating a new board object.
-    console.log(word_len, num_of_guesses, solution);
     const board = new Board(word_len, num_of_guesses, solution);
     // Initializing the board.
     board.init();

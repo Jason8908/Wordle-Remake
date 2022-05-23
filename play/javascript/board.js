@@ -49,6 +49,17 @@ class Board {
         // Writing the board to the screen.
         const game = document.getElementById("game");
         game.appendChild(board);
+        // Getting the message box.
+        this.message = document.getElementById("message");
+        let that = this;
+        $.ajax({
+            url: './words/getList.php',
+            type: 'GET',
+            success: async function(res) {
+                that.words = res.split(",");
+                for (let i = 0; i < 2; i++) that.words.pop();
+            }
+        });
     }
     endGame(guessed) {
         this.active = false;
@@ -65,10 +76,17 @@ class Board {
             return false;
         }
     }
+    validInput() {
+        // Joining the input array into a string.
+        let word = this.board_arr[this.curr_y].join("");
+        return this.words.includes(word);
+    }
     // Input-related functions.
     submit() {
         // If the row is not full.
         if (this.curr_x < this.width) return;
+        // Check if valid word.
+        if (!this.validInput()) return this.showMsg();
         // Otherwise, check for correctness, and move on to next row.
         if (this.checkRow()) return this.endGame(true);
         // Move onto the next row and check for last guess used.
@@ -94,6 +112,14 @@ class Board {
         this.update(this.curr_x, this.curr_y);
         // Traversing forward.
         this.curr_x++;
+    }
+    showMsg() {
+        this.message.classList.remove("hide");
+        this.message.classList.add("show");
+        setTimeout(() => {
+            this.message.classList.remove("show");
+            this.message.classList.add("hide");
+        }, 1000);
     }
     getColours() {
         // An array to store the colour codes.

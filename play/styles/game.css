@@ -40,6 +40,20 @@ body {
     text-align: center;
     margin-top: 50%;
 }
+#message {
+    position: fixed;
+    margin-top: 13%;
+    background-color: black;
+    color: white;
+    border-radius: 7px;
+    letter-spacing: 3px;
+    padding: 0.5%;
+    margin-left: 44.2%;
+    z-index: 100;
+    transition-timing-function: ease-in;
+    transition-property: all;
+    transition-duration: 0.25s;
+}
 .key {
     background-color: #D3D6DA;
     border-style: solid;

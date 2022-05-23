@@ -17,6 +17,7 @@
         <br>
         <div id="game"></div>
         <br>
+        <!-- Keyboard. -->
         <div id="keyboard">
             <div class="keyRow" id="r1">
                 <div class="key" id="Q"><p>Q</p></div>
@@ -51,5 +52,7 @@
                 <div class="key" id="M"><p>M</p></div>
             </div>
         </div>
+        <!-- Message Box -->
+        <div id="message" class="hide">Not a valid word.</div>
     </body>
 </html>
